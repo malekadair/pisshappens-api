@@ -6,3 +6,5 @@ const comicsRouter = express.Router();
 
 comicsRouter
 	.route('/')
+
+module.exports = comicsRouter
