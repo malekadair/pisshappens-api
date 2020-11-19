@@ -1,27 +1,27 @@
 const ComicsService = {
-	getAllDrawings(db) {
+	getAllComics(db) {
 		return db
 			.from('comics')
 	},
 
 	getComicByWeekId(db, week_id) {
-		return DrawingsService.getAllDrawings(db)
+		return ComicsService.getAllComics(db)
 			.where('comics.week_id', week_id)
 	},
 
 	getById(db, week_id) {
-		return DrawingsService.getAllComics(db)
+		return ComicssService.getAllComics(db)
 			.where("comics.week_id", week_id)
 			.first();
 	},
-	insertComics(db, newDrawing) {
+	insertComics(db, newComics) {
 		return db
-			.insert(newDrawing)
+			.insert(newComics)
 			.into("comics")
 			.returning("*")
-			.then(([drawing]) => drawing)
-			.then(drawing => DrawingsService.getById(db, drawing.week_id));
+			.then(([comics]) => comics)
+			.then(comics => ComicssService.getById(db, comics.week_id));
 	},
 }
 
-module.exports = DrawingsService
+module.exports = ComicsService
