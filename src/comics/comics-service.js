@@ -9,18 +9,18 @@ const ComicsService = {
 			.where('comics.week_id', week_id)
 	},
 
-	getById(db, week_id) {
-		return ComicssService.getAllComics(db)
-			.where("comics.week_id", week_id)
-			.first();
+	getComicById(db, comic_id) {
+		return ComicsService.getAllComics(db)
+		// .where('comics.id', comic_id)
+		// .first();
 	},
-	insertComics(db, newComics) {
+	insertComic(db, newComic) {
 		return db
-			.insert(newComics)
+			.insert(newComic)
 			.into("comics")
 			.returning("*")
-			.then(([comics]) => comics)
-			.then(comics => ComicssService.getById(db, comics.week_id));
+			.then(([comic]) => comic)
+			.then(comic => ComicsService.getById(db, comic.week_id));
 	},
 }
 

@@ -30,10 +30,26 @@ comicsRouter
 	.get((req, res, next) => {
 		ComicsService.getAllComics(req.app.get('db'))
 			.then(comics => {
-				res.json(comics)
+				res
+					.status(201)
+					.json(comics)
 			})
 			.catch(next)
 
 
+	})
+
+
+comicsRouter
+	.route('/:comic_id')
+	.get((req, res, next) => {
+		ComicsService.getComicById(
+			req.app.get('db'),
+			req.params.comic_id
+		)
+			.then(comic => {
+				res.json(comic);
+			})
+			.catch(next)
 	})
 module.exports = comicsRouter
