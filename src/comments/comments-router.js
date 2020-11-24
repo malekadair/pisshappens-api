@@ -84,20 +84,20 @@ commentsRouter
 			.catch(next)
 	})
 commentsRouter
-	.route('/:comment_id')
+	.route('/comic/:comic_id')
 	// .all(checkCommentExists)
 	// .get((req, res) => {
 	// 	res.json(res.comment);
 	// })
 	.get((req, res, next) => {
-		CommentsService.getCommentById(
+		CommentsService.getComicById(
 			req.app.get('db'),
-			req.params.comment_id
+			req.params.comic_id
 		)
 			.then(comment => {
 				res
 					.status(200)
-					.json(comment);
+					.json(comic);
 			})
 			.catch(next)
 	})
