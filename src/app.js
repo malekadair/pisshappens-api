@@ -15,7 +15,7 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
-app.use('api/comics', comicsRouter)
+app.use('/api/comics', comicsRouter)
 // app.use('/api/drawings', drawingsRouter)
 // app.use('/api/weeks', weeksRouter)
 // app.use('/api/users', usersRouter)
