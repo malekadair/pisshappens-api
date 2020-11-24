@@ -90,7 +90,7 @@ commentsRouter
 	// 	res.json(res.comment);
 	// })
 	.get((req, res, next) => {
-		CommentsService.getComicById(
+		CommentsService.getComicByComicId(
 			req.app.get('db'),
 			req.params.comic_id
 		)
