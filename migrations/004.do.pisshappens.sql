@@ -15,14 +15,14 @@ INSERT INTO comics (creator_id, title, description)
 VALUES
   (1, 'HAPPY comic', 'blah blah blah :)'),
   (1, 'UNHAPPY comic', 'blah :((((((('),
-  (3, 'mad comic', 'BLAH!');
+  (3, 'mad comic', 'BLAH!'),
   (2, 'just an ordinary comic', 'blah.');
 
 INSERT INTO comments (comic_id, user_id, comment)
 VALUES
   (1, 2, 'this is funny'),
   (1, 2, 'this is not funny'),
-  (3, 3, 'THIS IS NOT FUNNY!!!!');
+  (3, 3, 'THIS IS NOT FUNNY!!!!'),
   (2, 1, 'this is a comic');
 
 COMMIT;

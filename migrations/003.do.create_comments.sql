@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS comments (
 		REFERENCES users(id),
 	comment VARCHAR(280) NOT NULL,
 	date_created TIMESTAMP DEFAULT now() NOT NULL,
-	date_modified TIMESTAMP DEFAULT now() NOT NULL,
+	date_modified TIMESTAMP DEFAULT now() NOT NULL
 );
