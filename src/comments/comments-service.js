@@ -9,11 +9,11 @@ const CommentsService = {
 			.where('comments.id', comment_id)
 			.first();
 	},
-	getCommentByUserId(db, user_id) {
+	getCommentsByUserId(db, user_id) {
 		return CommentsService.getAllComments(db)
 			.where('comments.user_id', user_id)
 	},
-	getCommentByComicId(db, comic_id) {
+	getCommentsByComicId(db, comic_id) {
 		return CommentsService.getAllComments(db)
 			.where('comments.comic_id', comic_id)
 	},

@@ -90,11 +90,11 @@ commentsRouter
 	// 	res.json(res.comment);
 	// })
 	.get((req, res, next) => {
-		CommentsService.getComicByComicId(
+		CommentsService.getCommentsByComicId(
 			req.app.get('db'),
 			req.params.comic_id
 		)
-			.then(comment => {
+			.then(comic => {
 				res
 					.status(200)
 					.json(comic);
