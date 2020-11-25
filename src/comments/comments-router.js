@@ -94,10 +94,10 @@ commentsRouter
 			req.app.get('db'),
 			req.params.comic_id
 		)
-			.then(comic => {
+			.then(commentsData => {
 				res
 					.status(200)
-					.json(comic);
+					.json(commentsData);
 			})
 			.catch(next)
 	})
