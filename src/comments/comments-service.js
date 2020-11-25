@@ -12,15 +12,14 @@ const CommentsService = {
 	getCommentsByUserId(db, user_id) {
 		return CommentsService.getAllComments(db)
 			.where('comments.user_id', user_id)
-			.leftJoin('users',
-				'comments.user_id', 'users.id'
-			)
-			.groupBy('comments.user_id', 'users.id')
-
 	},
 	getCommentsByComicId(db, comic_id) {
 		return CommentsService.getAllComments(db)
 			.where('comments.comic_id', comic_id)
+			.leftJoin('users',
+				'comments.user_id', 'users.id'
+			)
+			.groupBy('comments.user_id', 'users.id')
 	},
 	insertComment(db, newComment) {
 		return db
