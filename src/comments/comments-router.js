@@ -35,34 +35,29 @@ commentsRouter
 					.json(comments)
 			})
 			.catch(next)
-		// 		.post(jsonBodyParser, (req, res, next) => {
-		// 			const { user_id, week_id, guess_1, guess_2, guess_3, guess_4, guess_5, power_ball, message } = req.body
-		// 	const newGuess = {
-		// 		user_id,
-		// 		week_id,
-		// 		guess_1,
-		// 		guess_2,
-		// 		guess_3,
-		// 		guess_4,
-		// 		guess_5,
-		// 		power_ball,
-		// 		message
-		// 	}
-		// 			for (const [key, value] of Object.entries(newComment))
-		// 				if (value == null)
-		// 					return res.status(400).json({
-		// 						error: `Missing '${key}' in request body`
-		// 					});
-		// 			GuessesService.insertGuess(req.app.get("db"), newGuess)
-		// 				.then(guess => {
-		// 					res
-		// 						.status(201)
-		// 						.json(guess);
-		// 				})
-		// 				.catch(next);
-		// 		})
-
 	})
+
+	.post(jsonBodyParser, (req, res, next) => {
+		const { comic_id, user_id, comment } = req.body
+		const newComment = {
+			comic_id,
+			user_id,
+			comment,
+		}
+		for (const [key, value] of Object.entries(newComment))
+			if (value == null)
+				return res.status(400).json({
+					error: `Missing '${key}' in request body`
+				});
+		CommentsService.insertComment(req.app.get("db"), newComment)
+			.then(comment => {
+				res
+					.status(201)
+					.json(comment);
+			})
+			.catch(next);
+	})
+
 
 
 commentsRouter
