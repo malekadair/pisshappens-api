@@ -19,7 +19,7 @@ app.use('/api/comics', comicsRouter)
 app.use('/api/comments', commentsRouter)
 // app.use('/api/weeks', weeksRouter)
 // app.use('/api/users', usersRouter)
-// app.use("/api/auth", authRouter);
+app.use("/api/auth", authRouter);
 
 app.use(function errorHandler(error, req, res, next) {
   let response;
