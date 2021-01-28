@@ -14,7 +14,7 @@ VALUES
 INSERT INTO comics (creator_id, comic_url, frames, title, description)
 VALUES
   (1, 'https://cdn.brandfolder.io/MLAUM12T/as/3rv8fmcx29g8m8sr9f8pwr4g/all_bark.png', 2, 'HAPPY comic', 'blah blah blah :)'),
-  (1, 'https://cdn.brandfolder.io/MLAUM12T/as/tsrcxw23bt2n2wbbpbvjpw/allergic_reaction_1.png', 5, 'Allergic Reaction', 'exploding kittens are fake. exploding because of kittens is real.'),
+  (1, 'https://cdn.brandfolder.io/MLAUM12T/as/3rv8fmcx29g8m8sr9f8pwr4g/all_bark.png', 3, 'UNHAPPY comic', 'blah :((((((('),
   (3, 'https://cdn.brandfolder.io/MLAUM12T/as/3rv8fmcx29g8m8sr9f8pwr4g/all_bark.png', 1, 'mad comic', 'BLAH!'),
   (2, 'https://cdn.brandfolder.io/MLAUM12T/as/3rv8fmcx29g8m8sr9f8pwr4g/all_bark.png', 3, 'just an ordinary comic', 'blah.');
 
